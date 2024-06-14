@@ -1,0 +1,72 @@
+body{
+    background-color: #f6f8e2;
+}
+.headerLogo img{
+    display: block;
+    margin: auto;
+}
+.genres{
+    display: flex;
+    margin-left: 4%;
+}
+.genre{
+    margin-right: 2%;
+}
+.genre :hover{
+    transform: scale(1.1);
+}
+.genre a{
+    text-decoration: none;
+}
+.genre img{
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+.genre p{
+    text-align: center;
+    font-size: larger;
+    margin-top: 0px;
+    color: #875f33;
+}
+.input{
+    background-color:#875f33 ;
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    padding-bottom: 3%;
+    border-radius: 10px;
+}
+.inputHeader{
+    color: #f6f8e2;
+    text-align: center;
+    padding-top: 5%;
+}
+.summaryInput{
+    display: block;
+    margin: auto;
+    background-color:#f6f8e2 ;
+    width: 30%
+}
+.submit{
+    display: block;
+    margin: auto;
+    margin-top: 3%;
+    font-size: large;
+    color: #875f33;
+    padding: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+    background-color: #f6f8e2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.output{
+    text-align: center;
+    color: #f6f8e2;
+    font-size: large;
+}
+.genre{
+    font-size: x-large;
+}

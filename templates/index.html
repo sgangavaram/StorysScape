@@ -4,48 +4,56 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="./styles.css">
+    <!-- Use url_for to generate the correct path for the styles.css file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>StorysScape</title>
 </head>
 
 <body>
     <div class="headerLogo">
-        <img src="./components/StorysScape Logo.png" alt="">
+        <!-- Ensure image src points to the correct path in the static directory -->
+        <img src="{{ url_for('static', filename='components/StorysScape Logo.png') }}" alt="StorysScape Logo">
     </div>
     <div class="genres">
         <div class="genre">
-            <a href="">
-                <img src="./components/Logo.png" alt="">
+            <a href="#">
+                <!-- Ensure image src points to the correct path in the static directory -->
+                <img src="{{ url_for('static', filename='components/Logo.png') }}" alt="Genre Logo">
                 <p>Fantasy</p>
             </a>
         </div>
         <div class="genre">
-            <a href="">
-                <img src="./components/Logo.png" alt="">
+            <a href="#">
+                <!-- Ensure image src points to the correct path in the static directory -->
+                <img src="{{ url_for('static', filename='components/Logo.png') }}" alt="Genre Logo">
                 <p>Science Fiction</p>
             </a>
         </div>
         <div class="genre">
-            <a href="">
-                <img src="./components/Logo.png" alt="">
+            <a href="#">
+                <!-- Ensure image src points to the correct path in the static directory -->
+                <img src="{{ url_for('static', filename='components/Logo.png') }}" alt="Genre Logo">
                 <p>Crime Fiction</p>
             </a>
         </div>
         <div class="genre">
-            <a href="">
-                <img src="./components/Logo.png" alt="">
-                <p>Historical Nove</p>
+            <a href="#">
+                <!-- Ensure image src points to the correct path in the static directory -->
+                <img src="{{ url_for('static', filename='components/Logo.png') }}" alt="Genre Logo">
+                <p>Historical Novel</p>
             </a>
         </div>
         <div class="genre">
-            <a href="">
-                <img src="./components/Logo.png" alt="">
+            <a href="#">
+                <!-- Ensure image src points to the correct path in the static directory -->
+                <img src="{{ url_for('static', filename='components/Logo.png') }}" alt="Genre Logo">
                 <p>Horror</p>
             </a>
         </div> 
         <div class="genre">
-            <a href="">
-                <img src="./components/Logo.png" alt="">
+            <a href="#">
+                <!-- Ensure image src points to the correct path in the static directory -->
+                <img src="{{ url_for('static', filename='components/Logo.png') }}" alt="Genre Logo">
                 <p>Thriller</p>
             </a>
         </div>
@@ -53,16 +61,17 @@
     <div class="input">
         <form action="/" method="post">
             <h2 class="inputHeader">Enter the Summary</h2>
-            <textarea name="summaryInput" id="" class="summaryInput" rows="10" cols="80" placeholder="Enter the summary here"></textarea>
+            <textarea name="summary" class="summaryInput" rows="20" placeholder="Enter the summary here">{{ summary }}</textarea>
             <button type="submit" class="submit">Predict</button>
         </form>
+        
 
-        {%if showresult%}
+        {% if showresult %}
             <div class="output">
                 <p class="outputText">Predicted Genre for the summary:</p>
-                <p class="genre">{{genre}}</p>
+                <p class="genre">{{ genre }}</p>
             </div>
-        {%end if%}
+        {% endif %}
     </div>
 </body>
 </html>
