@@ -51,8 +51,18 @@
         </div>
     </div>
     <div class="input">
-        <h2 class="inputHeader">Enter the Summary</h2>
-        <textarea name="summaryInput" id="" class="summaryInput" rows="4" cols="80"></textarea>
+        <form action="/" method="post">
+            <h2 class="inputHeader">Enter the Summary</h2>
+            <textarea name="summaryInput" id="" class="summaryInput" rows="10" cols="80" placeholder="Enter the summary here"></textarea>
+            <button type="submit" class="submit">Predict</button>
+        </form>
+
+        {%if showresult%}
+            <div class="output">
+                <p class="outputText">Predicted Genre for the summary:</p>
+                <p class="genre">{{genre}}</p>
+            </div>
+        {%end if%}
     </div>
 </body>
 </html>

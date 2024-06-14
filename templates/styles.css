@@ -34,6 +34,8 @@ body{
     width: 50%;
     margin: auto;
     margin-top: 5%;
+    padding-bottom: 3%;
+    border-radius: 10px;
 }
 .inputHeader{
     color: #f6f8e2;
@@ -43,4 +45,27 @@ body{
 .summaryInput{
     display: block;
     margin: auto;
+    background-color:#f6f8e2 ;
+}
+.submit{
+    display: block;
+    margin: auto;
+    margin-top: 3%;
+    font-size: large;
+    color: #875f33;
+    padding: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+    background-color: #f6f8e2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.output{
+    text-align: center;
+    color: #f6f8e2;
+    font-size: large;
+}
+.genre{
+    font-size: x-large;
 }
