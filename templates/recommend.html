@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Book Recommendation</title>
+</head>
+<body>
+    <h1>Book Recommendation</h1>
+    <form action="/recommend" method="post">
+        <label for="genre">Select Genre:</label>
+        <select id="genre" name="genre">
+            <option value="Fantasy">Fantasy</option>
+            <option value="Science Fiction">Science Fiction</option>
+            <option value="Crime Fiction">Crime Fiction</option>
+            <!-- Add more options based on your dataset -->
+        </select>
+        <button type="submit">Recommend</button>
+    </form>
+
+    {% if showresult %}
+        <h2>Recommended Books:</h2>
+        <ul>
+            {% for book in recommendations %}
+                <li>{{ book }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

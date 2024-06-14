@@ -9,8 +9,8 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 
 def cleantext(text):
-    text = re.sub("'\''", "", text)
-    text = re.sub("[^a-zA-Z]", " ", text)
+    text = re.sub(r"'\''", "", text)
+    text = re.sub(r"[^a-zA-Z]", " ", text)
     text = ' '.join(text.split())
     text = text.lower()
     return text
@@ -66,6 +66,22 @@ def hello_world():
         prediction = test(text, model, tfidf_vectorizer)
         return render_template('index.html', genre=prediction, text=str(text)[:100], showresult=True)
     return render_template('index.html')
+
+# @app.route('/recommendation', methods=['GET', 'POST'])
+# def recommendation():
+#     if request.method == 'POST':
+#         genre = request.form['genre']
+#         recommendations = recommend_books(genre)  # Implement this function based on your dataset
+#         return render_template('recommendation.html', genre=genre, recommendations=recommendations, showresult=True)
+#     return render_template('recommendation.html')
+
+# @app.route('/sentiment', methods=['GET', 'POST'])
+# def sentiment_analysis():
+#     if request.method == 'POST':
+#         text = request.form['text']
+#         sentiment = perform_sentiment_analysis(text)  # Implement this function based on NLTK or other sentiment analyzer
+#         return render_template('sentiment.html', text=text, sentiment=sentiment, showresult=True)
+#     return render_template('sentiment.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8082)
